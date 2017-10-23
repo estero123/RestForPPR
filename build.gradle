@@ -1,4 +1,4 @@
-group 'restservice'
+group 'RestForPPR'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
