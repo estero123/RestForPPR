@@ -12,4 +12,5 @@ public interface StudentService {
     void save(Student student);
     void save(List<Student> studentList);
     Iterable<Student> findAll();
+    Student findOne(long studentId);
 }

@@ -27,4 +27,9 @@ public class StudentServiceImpl implements StudentService{
     public Iterable<Student> findAll() {
         return studentRepository.findAll();
     }
+
+    @Override
+    public Student findOne(long studentId) {
+        return studentRepository.findOne(studentId);
+    }
 }

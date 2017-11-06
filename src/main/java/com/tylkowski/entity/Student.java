@@ -3,10 +3,10 @@ package com.tylkowski.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Student")
+@Table(name = "Students")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "firstName")

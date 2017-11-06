@@ -1,7 +1,9 @@
 package com.tylkowski;
 
+import com.tylkowski.entity.Group;
 import com.tylkowski.entity.Student;
 import com.tylkowski.repository.StudentRepository;
+import com.tylkowski.service.GroupService;
 import com.tylkowski.service.StudentService;
 import com.tylkowski.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +17,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 @SpringBootApplication
-public class RestService extends SpringBootServletInitializer{
+public class RestService extends SpringBootServletInitializer implements CommandLineRunner{
 
     @Autowired
     StudentService studentService;
+
+    @Autowired
+    GroupService groupService;
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -29,20 +34,24 @@ public class RestService extends SpringBootServletInitializer{
         SpringApplication.run(RestService.class, args);
     }
 
-//    @Override
-//    public void run(String... args) throws Exception {
-//        List<Student> studentList = new LinkedList<>();
-//        Student student = new Student();
-//        student.setFirstName("Hubert");
-//        student.setLastName("Tylkowski");
-//        studentList.add(student);
-//
-//        Student student2 = new Student();
-//        student2.setFirstName("Karol");
-//        student2.setLastName("Teske");
-//        studentList.add(student2);
-//
-//        studentService.save(studentList);
-//
-//    }
+    @Override
+    public void run(String... args) throws Exception {
+
+
+
+        List<Group> groupList = new LinkedList<>();
+
+        Group matematyka = new Group("Matematyka");
+        groupList.add(matematyka);
+        Group wf = new Group("Wychowanie fizyczne");
+        groupList.add(wf);
+
+        groupService.save(groupList);
+
+        List<Student> studentList = new LinkedList<>();
+        studentList.add(new Student("Hubert", "Tylkowski"));
+        studentList.add(new Student("Karol", "Teske"));
+        studentService.save(studentList);
+
+    }
 }
