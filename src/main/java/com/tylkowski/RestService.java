@@ -17,13 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @SpringBootApplication
-public class RestService extends SpringBootServletInitializer implements CommandLineRunner{
-
-    @Autowired
-    StudentService studentService;
-
-    @Autowired
-    GroupService groupService;
+public class RestService extends SpringBootServletInitializer{
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -32,26 +26,5 @@ public class RestService extends SpringBootServletInitializer implements Command
 
     public static void main(String[] args) {
         SpringApplication.run(RestService.class, args);
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-
-
-
-        List<Group> groupList = new LinkedList<>();
-
-        Group matematyka = new Group("Matematyka");
-        groupList.add(matematyka);
-        Group wf = new Group("Wychowanie fizyczne");
-        groupList.add(wf);
-
-        groupService.save(groupList);
-
-        List<Student> studentList = new LinkedList<>();
-        studentList.add(new Student("Hubert", "Tylkowski"));
-        studentList.add(new Student("Karol", "Teske"));
-        studentService.save(studentList);
-
     }
 }

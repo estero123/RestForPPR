@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Strona główna</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -9,7 +9,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
- <h1>Hello</h1>
-<h2>World!</h2>
+<div th:replace="fragments/header :: header">...</div>
+<div class="container">
+<div class="row">
+    <div class="col-sm-8">
+        <h1>Hello World!</h1>
+    </div>
+    <div class="col-sm-4">
+        <h3>Statystyki</h3>
+        <p th:text="'Ilość studentów: ' + ${studentsAmount}"></p>
+        <p th:text="'Ilość grup: ' + ${groupsAmount}"></p>
+    </div>
+</div>
+</div>
 </body>
 </html>

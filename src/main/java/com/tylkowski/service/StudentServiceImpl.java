@@ -3,6 +3,7 @@ package com.tylkowski.service;
 import com.tylkowski.entity.Student;
 import com.tylkowski.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +30,17 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
+    public Iterable<Student> findAll(Pageable pageable) {
+        return studentRepository.findAll(pageable);
+    }
+
+    @Override
     public Student findOne(long studentId) {
         return studentRepository.findOne(studentId);
+    }
+
+    @Override
+    public long count() {
+        return studentRepository.count();
     }
 }

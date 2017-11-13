@@ -11,8 +11,6 @@ public class Group {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @GenericGenerator(strategy = GenerationType.AUTO)
-//    @GenericGenerator(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "groupName")
