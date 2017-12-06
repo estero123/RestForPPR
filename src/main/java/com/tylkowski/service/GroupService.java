@@ -9,7 +9,7 @@ public interface GroupService {
     void save(Iterable<Group> groupList);
     Iterable<Group> findAll();
     Iterable<Group> findAll(Pageable pageable);
-    Group findOne(Long groupId);
+    Group findOne(long groupId);
     long count();
 
 }

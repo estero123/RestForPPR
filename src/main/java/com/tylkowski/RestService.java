@@ -27,4 +27,11 @@ public class RestService extends SpringBootServletInitializer{
     public static void main(String[] args) {
         SpringApplication.run(RestService.class, args);
     }
+
+    @Autowired
+    GroupService groupService;
+
+    @Autowired
+    StudentService studentService;
+
 }

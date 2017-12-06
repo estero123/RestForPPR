@@ -1,9 +1,13 @@
 package com.tylkowski.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Groups")
@@ -15,6 +19,14 @@ public class Group {
 
     @Column(name = "groupName")
     private String groupName;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "students_groups",
+            joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "groups_id",
+                    referencedColumnName = "id"))
+    @JsonBackReference
+    private List<Student> students;
 
     public Group(String groupName) {
         this.groupName = groupName;
@@ -39,11 +51,11 @@ public class Group {
         this.groupName = groupName;
     }
 
-    @Override
-    public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", groupName='" + groupName + '\'' +
-                '}';
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }

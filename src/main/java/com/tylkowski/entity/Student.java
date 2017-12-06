@@ -1,6 +1,11 @@
 package com.tylkowski.entity;
 
+import com.fasterxml.jackson.annotation.*;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Students")
@@ -14,6 +19,11 @@ public class Student {
 
     @Column(name = "lastName")
     private String lastName;
+
+    @ManyToMany(mappedBy = "students",fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Group> groups;
+
 
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
@@ -47,12 +57,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+    public List<Group> getGroups() {
+        return groups;
     }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
+
 }

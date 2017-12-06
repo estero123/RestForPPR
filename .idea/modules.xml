@@ -5,9 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestForPPR.iml" filepath="$PROJECT_DIR$/.idea/modules/RestForPPR.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestForPPR_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RestForPPR_main.iml" group="RestForPPR" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestForPPR_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RestForPPR_test.iml" group="RestForPPR" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restservice.iml" filepath="$PROJECT_DIR$/.idea/modules/restservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restservice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/restservice_main.iml" group="restservice" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restservice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/restservice_test.iml" group="restservice" />
     </modules>
   </component>
 </project>

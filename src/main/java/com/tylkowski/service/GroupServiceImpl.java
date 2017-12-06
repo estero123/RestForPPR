@@ -32,9 +32,8 @@ public class GroupServiceImpl  implements GroupService{
         return groupRepository.findAll(pageable);
     }
 
-
     @Override
-    public Group findOne(Long groupId) {
+    public Group findOne(long groupId) {
         return groupRepository.findOne(groupId);
     }
 
