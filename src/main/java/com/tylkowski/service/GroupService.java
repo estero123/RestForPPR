@@ -10,6 +10,7 @@ public interface GroupService {
     Iterable<Group> findAll();
     Iterable<Group> findAll(Pageable pageable);
     Group findOne(long groupId);
+    void delete(long groupId);
     long count();
 
 }

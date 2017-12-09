@@ -38,6 +38,11 @@ public class GroupServiceImpl  implements GroupService{
     }
 
     @Override
+    public void delete(long groupId) {
+        groupRepository.delete(groupId);
+    }
+
+    @Override
     public long count() {
         return groupRepository.count();
     }

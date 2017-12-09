@@ -40,6 +40,11 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
+    public void delete(long studentId) {
+        studentRepository.delete(studentId);
+    }
+
+    @Override
     public long count() {
         return studentRepository.count();
     }

@@ -20,7 +20,13 @@ public class Student {
     @Column(name = "lastName")
     private String lastName;
 
-    @ManyToMany(mappedBy = "students",fetch = FetchType.EAGER)
+//    @ManyToMany(mappedBy = "students",fetch = FetchType.EAGER)
+//    @JsonManagedReference
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "groups_students",
+        joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "groups_id",
+                referencedColumnName = "id"))
     @JsonManagedReference
     private List<Group> groups;
 

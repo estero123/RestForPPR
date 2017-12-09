@@ -17,5 +17,6 @@ public interface StudentService {
     Iterable<Student> findAll();
     Iterable<Student> findAll(Pageable pageable);
     Student findOne(long studentId);
+    void delete(long studentId);
     long count();
 }

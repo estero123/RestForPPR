@@ -2,6 +2,7 @@ package com.tylkowski.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -20,11 +21,13 @@ public class Group {
     @Column(name = "groupName")
     private String groupName;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "students_groups",
-            joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "groups_id",
-                    referencedColumnName = "id"))
+//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinTable(name = "students_groups",
+//            joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "groups_id",
+//                    referencedColumnName = "id"))
+//    @JsonBackReference
+    @ManyToMany(mappedBy = "groups",fetch = FetchType.EAGER)
     @JsonBackReference
     private List<Student> students;
 
