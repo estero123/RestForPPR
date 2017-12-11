@@ -108,5 +108,18 @@ public class AdminController {
         return "modifyGroupPage";
     }
 
+    @DeleteMapping("/modify-group/deleteStudentFromGroup/{groupId}/{studentId}")
+    @ResponseBody
+    public String removeStudentFromGroup(Model model, @PathVariable long groupId, @PathVariable long studentId) {
+        System.out.println("removeStudentFromGroup");
+        Student student = studentService.findOne(studentId);
+        Group group = groupService.findOne(groupId);
+        student.getGroups().remove(group);
+        studentService.save(student);
+        groupService.save(group);
+        model.addAttribute("groupList", groupService.findAll());
+        return "redirect:/modify-group";
+    }
+
 
 }

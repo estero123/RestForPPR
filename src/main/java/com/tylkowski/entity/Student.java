@@ -3,13 +3,15 @@ package com.tylkowski.entity;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "Students")
-public class Student {
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -27,7 +29,6 @@ public class Student {
         joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "groups_id",
                 referencedColumnName = "id"))
-    @JsonManagedReference
     private List<Group> groups;
 
 
@@ -70,5 +71,7 @@ public class Student {
     public void setGroups(List<Group> groups) {
         this.groups = groups;
     }
+
+
 
 }
