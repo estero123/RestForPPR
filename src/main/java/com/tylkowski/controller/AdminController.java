@@ -25,28 +25,8 @@ public class AdminController {
         return "addStudent";
     }
 
-    @PostMapping(value = {"/add-student", "/add-student/"})
-    public String addStudentSubmit(@ModelAttribute Student student, Model model) {
-        studentService.save(student);
-        System.out.println("Success!" + student.getFirstName() + " " + student.getLastName() + " added!");
-        model.addAttribute("studentsAmount", studentService.count());
-        model.addAttribute("student", new Student());
-        model.addAttribute("groupList", groupService.findAll());
-        return "addStudent";
-    }
-
     @GetMapping(value = {"/add-group", "/add-group/"})
     public String addGroupPage(Model model) {
-        model.addAttribute("groupsAmount", groupService.count());
-        model.addAttribute("group", new Group());
-        return "addGroup";
-    }
-
-    @PostMapping(value = {"/add-group", "/add-group/"})
-    public String addGroupSubmit(@ModelAttribute Group group, Model model) {
-        groupService.save(group);
-
-        System.out.println("Succees!" + group.getGroupName() + " added!");
         model.addAttribute("groupsAmount", groupService.count());
         model.addAttribute("group", new Group());
         return "addGroup";
@@ -68,28 +48,6 @@ public class AdminController {
         return "modifyStudent";
     }
 
-
-//    DELETE GROUPS/STUDENTS
-
-    @GetMapping(value = {"/modify-group/delete/{groupId}"})
-    public String deleteGroupPage(Model model, @PathVariable long groupId) {
-        Group group = groupService.findOne(groupId);
-        for (Student student :
-                group.getStudents()) {
-            student.getGroups().remove(group);
-        }
-        groupService.delete(groupId);
-        model.addAttribute("groupList", groupService.findAll());
-        return "redirect:/modify-group";
-    }
-
-    @GetMapping(value = {"/modify-student/delete/{studentId}"})
-    public String deleteStudentPage(Model model, @PathVariable long studentId) {
-        studentService.delete(studentId);
-        model.addAttribute("studentList", studentService.findAll());
-        return "redirect:/modify-student";
-    }
-
 //  MODIFY GROUPS/STUDENTS
 
     @GetMapping("/modify-student/modify/{studentId}")
@@ -107,19 +65,5 @@ public class AdminController {
         model.addAttribute("groupsAmount", groupService.count());
         return "modifyGroupPage";
     }
-
-    @DeleteMapping("/modify-group/deleteStudentFromGroup/{groupId}/{studentId}")
-    @ResponseBody
-    public String removeStudentFromGroup(Model model, @PathVariable long groupId, @PathVariable long studentId) {
-        System.out.println("removeStudentFromGroup");
-        Student student = studentService.findOne(studentId);
-        Group group = groupService.findOne(groupId);
-        student.getGroups().remove(group);
-        studentService.save(student);
-        groupService.save(group);
-        model.addAttribute("groupList", groupService.findAll());
-        return "redirect:/modify-group";
-    }
-
 
 }

@@ -49,6 +49,7 @@ public class ControllerRest {
 
     @PostMapping(value = "/students", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> addStudent(@RequestBody Student student, UriComponentsBuilder ucBuilder) {
+        System.out.println(student.toString());
         studentService.save(student);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("api/students/{studentId}").buildAndExpand(student.getId()).toUri());
@@ -161,6 +162,8 @@ public class ControllerRest {
     public ResponseEntity<Void> updateGroup(@PathVariable long groupId, @RequestBody Group group) {
         Group groupToChange = groupService.findOne(groupId);
         if ( group != null && groupToChange != null) {
+            System.out.println("groupToChange: " + groupToChange.toString());
+            System.out.println("group: " + group.toString());
             groupService.save(group);
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
