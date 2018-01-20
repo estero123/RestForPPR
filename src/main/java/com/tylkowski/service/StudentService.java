@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public interface StudentService {
-    void save(Student student);
+    Student save(Student student);
     void save(List<Student> studentList);
     Iterable<Student> findAll();
     Iterable<Student> findAll(Pageable pageable);

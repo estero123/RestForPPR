@@ -4,6 +4,7 @@ import com.tylkowski.entity.Student;
 import com.tylkowski.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +16,9 @@ public class StudentServiceImpl implements StudentService{
     StudentRepository studentRepository;
 
     @Override
-    public void save(Student student) {
-        studentRepository.save(student);
+    public Student save(Student student) {
+        System.out.println(student.getFirstName() + " " + student.getLastName());
+        return studentRepository.save(student);
     }
 
     @Override
