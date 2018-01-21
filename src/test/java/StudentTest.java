@@ -83,11 +83,12 @@ public class StudentTest {
 
     @Test
     public void postStudentRestTest() throws Exception {
+        long groupId = groupService.save(new Group("testowa")).getId();
         String jsonStudent = new JSONObject()
                 .put("firstName", "Ziomek")
                 .put("lastName", "Do testów")
                 .put("groups", new JSONArray()
-                        .put(new JSONObject().put("id",30))).toString();
+                        .put(new JSONObject().put("id",groupId))).toString();
 
 
         String urlToAddedStudent = this.mockMvc.perform(post("/api/students")
@@ -96,6 +97,8 @@ public class StudentTest {
                 .andExpect(status().isCreated()).andReturn().getResponse().getHeader("Location");
         long studentId = Long.parseLong(urlToAddedStudent.replace("http://localhost/api/students/", ""));
         studentService.delete(studentId);
+        groupService.delete(groupId);
+        assertNull(groupService.findOne(groupId));
 
     }
 
@@ -140,12 +143,13 @@ public class StudentTest {
     @Test
     public void updateStudentRestTest() throws Exception {
         long studentId = studentService.save(new Student("imie", "nazwisko")).getId();
+        long groupId = groupService.save(new Group("testowa")).getId();
         String jsonStudent = new JSONObject()
                 .put("id", studentId)
                 .put("firstName", "Ziomek")
                 .put("lastName", "Do testów")
                 .put("groups", new JSONArray()
-                        .put(new JSONObject().put("id",30))).toString();
+                        .put(new JSONObject().put("id",groupId))).toString();
 
         this.mockMvc.perform(put("/api/students/update/" + studentId)
                 .contentType(contentType)
@@ -153,6 +157,8 @@ public class StudentTest {
                 .andExpect(status().isOk());
 
         this.mockMvc.perform(delete("/api/students/delete/" + studentId)).andExpect(status().isNoContent());
+        groupService.delete(groupId);
+        assertNull(groupService.findOne(groupId));
     }
 
 

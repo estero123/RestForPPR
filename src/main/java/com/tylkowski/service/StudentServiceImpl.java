@@ -3,6 +3,7 @@ package com.tylkowski.service;
 import com.tylkowski.entity.Student;
 import com.tylkowski.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public Iterable<Student> findAll(Pageable pageable) {
+    public Page<Student> findAll(Pageable pageable) {
         return studentRepository.findAll(pageable);
     }
 
