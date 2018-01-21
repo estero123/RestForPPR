@@ -1,8 +1,10 @@
 import com.tylkowski.RestService;
+import com.tylkowski.entity.Group;
 import com.tylkowski.entity.Student;
 import com.tylkowski.service.GroupService;
 import com.tylkowski.service.StudentService;
-import org.junit.Assert;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,12 +19,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.nio.charset.Charset;
-import java.util.Arrays;
+import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
@@ -36,8 +36,6 @@ public class StudentTest {
 
     private MockMvc mockMvc;
 
-    private HttpMessageConverter mappingJackson2HttpMessageConverter;
-
 
     @Autowired
     private StudentService studentService;
@@ -46,39 +44,120 @@ public class StudentTest {
     private WebApplicationContext webApplicationContext;
 
     @Autowired
-    private GroupService groupRepository;
-    private Student student = new Student("Hubert", "Testowy");
+    private GroupService groupService;
+    private Student studentToTests = new Student("Hubert", "Testowy");
 
     @Autowired
     void setConverters(HttpMessageConverter<?>[] converters) {
 
-        this.mappingJackson2HttpMessageConverter = Arrays.asList(converters).stream()
+        HttpMessageConverter mappingJackson2HttpMessageConverter = Arrays.asList(converters).stream()
                 .filter(hmc -> hmc instanceof MappingJackson2HttpMessageConverter)
                 .findAny()
                 .orElse(null);
 
         assertNotNull("the JSON message converter must not be null",
-                this.mappingJackson2HttpMessageConverter);
+                mappingJackson2HttpMessageConverter);
     }
 
     @Before
     public void setup() throws Exception {
-
         this.mockMvc = webAppContextSetup(webApplicationContext).build();
     }
     @Test
     public void createStudentWithService() {
-        assertNotEquals(studentService.save(student).getId(), 0);
-        studentService.delete(student.getId());
+        assertNotEquals(studentService.save(studentToTests).getId(), 0);
+        studentService.delete(studentToTests.getId());
     }
 
     @Test
     public void deleteStudentWithService() {
-        studentService.delete(studentService.save(student).getId());
+        long studentId = studentService.save(studentToTests).getId();
+        studentService.delete(studentId);
+        assertNull(studentService.findOne(studentId));
     }
 
     @Test
     public void countStudentsTest() {
         assertNotEquals(studentService.count(), -1);
     }
+
+    @Test
+    public void postStudentRestTest() throws Exception {
+        String jsonStudent = new JSONObject()
+                .put("firstName", "Ziomek")
+                .put("lastName", "Do testów")
+                .put("groups", new JSONArray()
+                        .put(new JSONObject().put("id",30))).toString();
+
+
+        String urlToAddedStudent = this.mockMvc.perform(post("/api/students")
+                .contentType(contentType)
+                .content(jsonStudent))
+                .andExpect(status().isCreated()).andReturn().getResponse().getHeader("Location");
+        long studentId = Long.parseLong(urlToAddedStudent.replace("http://localhost/api/students/", ""));
+        studentService.delete(studentId);
+
+    }
+
+    @Test
+    public void getStudentsListRestTest() throws Exception {
+        this.mockMvc.perform(get("/api/students")).andExpect(status().isOk());
+    }
+    @Test
+    public void getOneStudentRestTest() throws Exception {
+        ArrayList<Student> studentList = (ArrayList<Student>) studentService.findAll();
+        long studentId = studentList.get(0).getId();
+        this.mockMvc.perform(get("/api/students/" + studentId)).andExpect(status().isOk());
+    }
+
+    @Test
+    public void getStudentGroupsRestTest() throws Exception {
+        ArrayList<Student> studentList = (ArrayList<Student>) studentService.findAll();
+        long studentId = studentList.get(0).getId();
+        this.mockMvc.perform(get("/api/students/" + studentId + "/groups")).andExpect(status().isOk());
+    }
+
+    @Test
+    public void deleteStudentRestTest() throws Exception {
+        long studentId = studentService.save(new Student("Ziomek", "do testow")).getId();
+
+        this.mockMvc.perform(delete("/api/students/delete/" + studentId)).andExpect(status().isNoContent());
+    }
+
+    @Test
+    public void deleteStudentFromGroupRestTest() throws Exception {
+        Group studentGroup = new Group("testowa");
+        long groupId = groupService.save(studentGroup).getId();
+        List<Group> groups = new LinkedList<>();
+        groups.add(studentGroup);
+        long studentId = studentService.save(new Student("Ziomek", "do testow", groups)).getId();
+
+        this.mockMvc.perform(delete("/api/students/" + studentId + "/remove/" + groupId)).andExpect(status().isNoContent());
+        this.mockMvc.perform(delete("/api/students/delete/" + studentId)).andExpect(status().isNoContent());
+        this.mockMvc.perform(delete("/api/groups/delete/" + groupId)).andExpect(status().isNoContent());
+    }
+
+    @Test
+    public void updateStudentRestTest() throws Exception {
+        long studentId = studentService.save(new Student("imie", "nazwisko")).getId();
+        String jsonStudent = new JSONObject()
+                .put("id", studentId)
+                .put("firstName", "Ziomek")
+                .put("lastName", "Do testów")
+                .put("groups", new JSONArray()
+                        .put(new JSONObject().put("id",30))).toString();
+
+        this.mockMvc.perform(put("/api/students/update/" + studentId)
+                .contentType(contentType)
+                .content(jsonStudent))
+                .andExpect(status().isOk());
+
+        this.mockMvc.perform(delete("/api/students/delete/" + studentId)).andExpect(status().isNoContent());
+    }
+
+
+
+
+
+
 }

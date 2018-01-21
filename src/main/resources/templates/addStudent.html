@@ -49,7 +49,6 @@
             $("#groupList option:selected").each(function(){
                 groupList.push({id: parseInt($(this).attr("value"))});
             });
-            console.log(groupList);
             $.ajax({
                 url: '/api/students',
                 type: 'post',

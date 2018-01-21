@@ -37,6 +37,12 @@ public class Student implements Serializable {
         this.lastName = lastName;
     }
 
+    public Student(String firstName, String lastName, List<Group> groups) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.groups = groups;
+    }
+
     public Student() {
     }
 
