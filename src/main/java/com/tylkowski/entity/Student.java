@@ -10,8 +10,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Students")
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class Student implements Serializable {
+@JsonIdentityInfo(scope = Student.class,generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+public class Student{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

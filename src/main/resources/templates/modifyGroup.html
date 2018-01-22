@@ -20,9 +20,7 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center" role="tab" th:id="'heading' + ${group.id}">
                             <p th:text="${group.groupName}" th:remove="tag"></p>
                             <div class="float-right">
-                            <!--<a th:href="@{/modify-group/delete/} + ${group.id}">-->
                                 <button type="button" th:value="${group.id}" class="btn btn-outline-danger deleteGroupButton">Delete</button>
-                            <!--</a>-->
                             <a th:href="@{/modify-group/modify/} + ${group.id}"><button type="button" class="btn btn-outline-success">Modify</button></a>
                                 <a class="collapsed" data-toggle="collapse" th:href="'#collapse' + ${group.id}" aria-expanded="false" th:aria-controls="'collapse' + ${group.id}"><button type="button" class="btn btn-outline-primary btn-sm"><div data-feather="chevron-down"></div></button></a>
                             <span class="badge badge-primary badge-pill" th:text="${#lists.size(group.students)}">countStudents</span>
@@ -34,11 +32,9 @@
                                 <li th:each="student : ${group.students}" class="list-group-item d-flex justify-content-between align-items-center" >
                                     <p th:text="${student.firstName} + ' ' + ${student.lastName}">Imię nazwisko</p>
                                     <div class="float-right">
-                                        <!--<a methods="DELETE" th:href="@{/modify-group/deleteStudentFromGroup/} + ${group.id} + '/' + ${student.id}">-->
                                             <button type="button" th:onclick="'deleteStudentFromGroup('+ ${student.id} + ','+ ${group.id} +')'" th:value="${group.id}" class="btn btn-outline-danger btn-sm deleteStudentFromGroupButton">
                                                 <div data-feather="x" ></div>
                                         </button>
-                                        <!--</a>-->
                                         </div>
                                 </li>
                             </ul>
@@ -47,7 +43,7 @@
                     </div>
                 </ul>
             </div>
-
+        <div th:if="${totalPages != 0}" th:remove="tag">
             <div style="margin-top: 5px;">
                 <nav aria-label="...">
                     <ul class="pagination justify-content-center">
@@ -62,6 +58,7 @@
                     </ul>
                 </nav>
             </div>
+        </div>
         </div>
 
         <div class="col-sm-4">

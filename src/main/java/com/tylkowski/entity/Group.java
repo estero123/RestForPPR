@@ -15,8 +15,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Groups")
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class Group implements Serializable{
+@JsonIdentityInfo(scope = Group.class,generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+public class Group{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

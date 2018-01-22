@@ -23,7 +23,7 @@
 
                 </li>
             </ul>
-
+            <div th:if="${totalPages != 0}" th:remove="tag">
             <div style="margin-top: 5px;">
                 <nav aria-label="...">
                     <ul class="pagination justify-content-center">
@@ -37,6 +37,7 @@
                     </div>
                     </ul>
                 </nav>
+            </div>
             </div>
 
         </div>

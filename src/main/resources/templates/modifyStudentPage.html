@@ -67,7 +67,7 @@
                 success: function(data){
                     if (confirm("Student updated!")){
                         $('#studentForm')[0].reset();
-                        window.location.reload();
+                        window.location.href = "/modify-student/";
                     }
                 },
                 error: function(errorThrown){

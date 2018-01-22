@@ -50,8 +50,7 @@
                 data: JSON.stringify( { "id": $('#id').val(), "groupName": $('#groupName').val()} ),
                 success: function(data){
                     if (confirm("Group updated!")){
-                        $('#groupForm').reset();
-                        window.location.reload();
+                        window.location.href = "/modify-group/";
                     }
                 },
                 error: function(errorThrown){
