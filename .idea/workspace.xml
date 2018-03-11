@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100c2748-4710-470a-b9fc-a008ec82487f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/RestService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/controller/ControllerRest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/controller/GroupController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/controller/GroupRestController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/controller/HomepageController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/controller/StudentController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/controller/StudentRestController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/entity/Group.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/entity/Student.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/repository/GroupRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/repository/StudentRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/service/GroupService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/service/GroupServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/service/StudentService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/service/StudentServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/StudentRestController.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -603,84 +590,6 @@
               <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
               <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tylkowski" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tylkowski" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tylkowski" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tylkowski" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tylkowski" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="rest-for-ppr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1071,7 +980,7 @@
       <workItem from="1520615537690" duration="69000" />
       <workItem from="1520616379367" duration="10935000" />
       <workItem from="1520688454201" duration="11542000" />
-      <workItem from="1520766923299" duration="3083000" />
+      <workItem from="1520766923299" duration="3198000" />
     </task>
     <task id="LOCAL-00001" summary="Update project name">
       <created>1508753854916</created>
@@ -1157,7 +1066,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520781995643</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="First steps in React and groovy tests">
+      <created>1520782115263</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1520782115263</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1193,7 +1109,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233814000" />
+    <option name="totallyTimeSpent" value="233929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
