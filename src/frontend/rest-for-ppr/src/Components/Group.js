@@ -11,9 +11,10 @@ export default class Group extends React.Component {
 
 
     render() {
-        return(
-        <div>
-        {this.state.groupName}
-        </div>
-        )}
+        return (
+            <div>
+                {this.state.groupName}
+            </div>
+        )
+    }
 }
