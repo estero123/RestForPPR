@@ -2,7 +2,6 @@ package com.tylkowski.controller;
 
 import com.tylkowski.entity.Group;
 import com.tylkowski.entity.Student;
-import com.tylkowski.service.GroupService;
 import com.tylkowski.service.StudentService;
 import com.tylkowski.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,12 +97,11 @@ public class StudentRestController {
     }
 
     @DeleteMapping("/{studentId}/delete/")
-    public ResponseEntity<Student> deleteStudent(@PathVariable long studentId){
+    public ResponseEntity<Student> deleteStudent(@PathVariable long studentId) {
         Optional<Student> student = studentService.findOne(studentId);
         if (!student.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        else {
+        } else {
             studentService.deleteById(studentId);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

@@ -1,20 +1,16 @@
 package com.tylkowski.service;
 
-import com.tylkowski.controller.GroupRestController;
 import com.tylkowski.entity.Group;
 import com.tylkowski.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-
 @Service
-public class GroupServiceImpl implements GroupService{
+public class GroupServiceImpl implements GroupService {
 
     private GroupRepository groupRepository;
 

@@ -15,8 +15,7 @@ import static com.tylkowski.utils.Constants.NOT_EXISTS;
 import static com.tylkowski.utils.Constants.OK;
 
 @Service
-public class StudentServiceImpl implements StudentService{
-
+public class StudentServiceImpl implements StudentService {
 
 
     private StudentRepository studentRepository;
@@ -62,7 +61,7 @@ public class StudentServiceImpl implements StudentService{
         Optional<Student> studentFromDatabase = studentRepository.findById(student.getSid()); //check if user exists
         if (studentFromDatabase.isPresent()) {
             List<Group> studentGroups = student.getGroups(); //check if groups exists
-            if(!studentGroups.stream().allMatch(s -> s != null)) return NOT_EXISTS;
+            if (!studentGroups.stream().allMatch(s -> s != null)) return NOT_EXISTS;
             studentRepository.save(student);
             return OK;
         } else {

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="100c2748-4710-470a-b9fc-a008ec82487f" name="Default" comment="Added Spock tests support">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/utils/Constants.java" />
+    <list default="true" id="100c2748-4710-470a-b9fc-a008ec82487f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/rest-for-ppr/package-lock.json" afterPath="$PROJECT_DIR$/frontend/rest-for-ppr/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/rest-for-ppr/package.json" afterPath="$PROJECT_DIR$/frontend/rest-for-ppr/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/StudentRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/StudentRestController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/repository/GroupRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/repository/GroupRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/repository/StudentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/repository/StudentRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupService.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/groovy/StudentServiceTest.groovy" afterPath="$PROJECT_DIR$/src/test/groovy/StudentServiceTest.groovy" />
     </list>
@@ -108,69 +109,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-              <folding>
-                <element signature="e#1860#1861#0" expanded="true" />
-                <element signature="e#1900#1901#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
-              <folding>
-                <element signature="e#1488#1489#0" expanded="true" />
-                <element signature="e#1533#1534#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupRestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
-              <caret line="118" column="37" lean-forward="true" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentServiceTest.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StudentServiceTest.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/groovy/StudentServiceTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentServiceImpl.java">
+      <file leaf-file-name="StudentService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -505,7 +460,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/backend/main/java/com/tylkowski/entity/Group.java" />
         <option value="$PROJECT_DIR$/frontend/rest-for-ppr/src/Components/css/Homepage.css" />
         <option value="$PROJECT_DIR$/frontend/rest-for-ppr/src/Components/Homepage2.js" />
         <option value="$PROJECT_DIR$/frontend/rest-for-ppr/src/Components/css/AddStudentPage.css" />
@@ -544,18 +498,19 @@
         <option value="$PROJECT_DIR$/frontend/rest-for-ppr/src/Components/Group/GroupFormGivenId.js" />
         <option value="$PROJECT_DIR$/frontend/rest-for-ppr/src/Components/Group/ModifyGroupPage.js" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/StudentRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/repository/GroupRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/repository/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/test/groovy/StudentServiceTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tylkowski/controller/StudentRestController.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/StudentServiceTest.groovy" />
       </list>
     </option>
   </component>
@@ -675,6 +630,15 @@
               <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
               <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tylkowski" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RestForPPR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RestForPPR" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -699,7 +663,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.113507375" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -754,7 +718,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestService">
+  <component name="RunManager" selected="JUnit.StudentServiceTest.should save student">
     <configuration name="All in RestForPPR_main" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="RestForPPR_main" />
@@ -856,6 +820,26 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="StudentServiceTest.should save student" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="RestForPPR_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StudentServiceTest" />
+      <option name="METHOD_NAME" value="should save student" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -936,20 +920,22 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in RestForPPR_main" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.RestService" />
       <item index="2" class="java.lang.String" itemvalue="Gradle.RestForPPR [clean]" />
       <item index="3" class="java.lang.String" itemvalue="Gradle.RestForPPR [classes]" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.StudentServiceTest" />
       <item index="5" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.should return a optional student" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.should save student" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.StudentServiceTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.should save student" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.StudentServiceTest.should return a optional student" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.RestForPPR [classes]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.RestForPPR [clean]" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.StudentServiceTest" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.RestForPPR [classes]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.RestForPPR [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -1043,7 +1029,7 @@
       <workItem from="1521019376986" duration="5384000" />
       <workItem from="1521095005027" duration="335000" />
       <workItem from="1521104152465" duration="290000" />
-      <workItem from="1521105644296" duration="2413000" />
+      <workItem from="1521105644296" duration="4253000" />
     </task>
     <task id="LOCAL-00001" summary="Update project name">
       <created>1508753854916</created>
@@ -1150,30 +1136,19 @@
       <option name="project" value="LOCAL" />
       <updated>1520845763876</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added Spock tests support">
+      <created>1521108088082</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1521108088082</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
     <history-entry file="StudentServiceTest - 2018.03.15 at 10h 43m 47s.xml">
       <configuration name="StudentServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.13 at 11h 41m 15s.xml">
-      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.13 at 11h 42m 31s.xml">
-      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.13 at 11h 43m 02s.xml">
-      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.13 at 11h 43m 32s.xml">
-      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.13 at 11h 44m 31s.xml">
-      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.15 at 10h 24m 47s.xml">
-      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
     </history-entry>
     <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.15 at 10h 25m 40s.xml">
       <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
@@ -1184,9 +1159,27 @@
     <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.15 at 10h 41m 05s.xml">
       <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.15 at 11h 22m 00s.xml">
+      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.15 at 11h 22m 16s.xml">
+      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentServiceTest_should_return_a_optional_student - 2018.03.15 at 11h 22m 28s.xml">
+      <configuration name="StudentServiceTest.should return a optional student" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentServiceTest_should_save_student - 2018.03.15 at 11h 29m 05s.xml">
+      <configuration name="StudentServiceTest.should save student" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentServiceTest_should_save_student - 2018.03.15 at 11h 31m 17s.xml">
+      <configuration name="StudentServiceTest.should save student" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentServiceTest_should_save_student - 2018.03.15 at 11h 31m 54s.xml">
+      <configuration name="StudentServiceTest.should save student" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268188000" />
+    <option name="totallyTimeSpent" value="270028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1212,7 +1205,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7173913" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3771739" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3771739" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1488,76 +1481,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/repository/GroupRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/repository/StudentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
-          <folding>
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1533#1534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="118" column="37" lean-forward="true" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding>
-            <element signature="e#1860#1861#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/software/jdk/src.zip!/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1566,35 +1490,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/controller/GroupRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="118" column="37" lean-forward="false" selection-start-line="118" selection-start-column="37" selection-end-line="118" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/controller/StudentRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+        <state relative-caret-position="487">
+          <caret line="103" column="16" lean-forward="false" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="e#1726#1727#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/entity/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/repository/GroupRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/repository/StudentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/GroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+          <folding>
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/utils/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/StudentServiceTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tylkowski/service/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="544">
+          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1651,12 +1649,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>RestForPPR|RestForPPR</last-edited>
+          <last-edited>RestForPPR</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
