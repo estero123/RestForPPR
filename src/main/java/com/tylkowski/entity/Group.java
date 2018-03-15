@@ -71,7 +71,6 @@ public class Group extends ResourceSupport {
     }
 
     public void setStudents(List<Student> students) {
-        System.out.println("SET STUDENTS!!!!!!!!!!!!!!!!!!!!!!!\n\n\n\n\n");
         this.students = students;
     }
 }

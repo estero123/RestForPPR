@@ -4,6 +4,7 @@ import com.tylkowski.entity.Group;
 import com.tylkowski.entity.Student;
 import com.tylkowski.service.GroupService;
 import com.tylkowski.service.StudentService;
+import com.tylkowski.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpHeaders;
@@ -111,7 +112,7 @@ public class StudentRestController {
 
     @PutMapping(value = {"/", ""})
     public ResponseEntity<Void> updateStudent(@RequestBody Student student) {
-        if (studentService.update(student) == 0) {
+        if (studentService.update(student) == Constants.OK) {
             studentService.save(student);
             return new ResponseEntity<>(HttpStatus.OK);
         } else {

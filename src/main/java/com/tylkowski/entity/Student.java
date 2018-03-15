@@ -30,7 +30,7 @@ public class Student extends ResourceSupport {
     private String lastName;
 
 
-    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "groups_students",
             joinColumns = @JoinColumn(name = "students_sid", referencedColumnName = "sid"),
             inverseJoinColumns = @JoinColumn(name = "groups_gid", referencedColumnName = "gid"))

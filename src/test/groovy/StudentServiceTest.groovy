@@ -8,19 +8,27 @@ import spock.lang.Specification
 
 class StudentServiceTest extends Specification {
 
+    def studentRepository
+    def studentService
+
+
+    def setup() {
+        studentRepository = Stub(StudentRepository.class)
+        studentService = new StudentServiceImpl(studentRepository)
+    }
+
+
   def "should return a optional student"() {
-      given:
-        Optional<Student> student = Optional.of(new Student("Test", "Test"))
-        StudentRepository studentRepository = Stub(StudentRepository.class)
-      and:
-        StudentServiceImpl studentService = new StudentServiceImpl(studentRepository)
-//        studentService = Stub()
-        studentService.findOne(10) >> student
+
       when:
-        def student2 = studentService.findOne(10).get()
+        studentRepository.findById(_) >> Optional.of(new Student("Test", "Test"))
+        def student2 = studentService.findOne(10)
       then:
-        student2.getFirstName() == "Test"
-        student2.getLastName() == "Test"
+        student2.get().getFirstName() == "Test"
   }
+
+    
+
+
 
 }
