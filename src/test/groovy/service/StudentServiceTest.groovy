@@ -1,3 +1,5 @@
+package service
+
 import com.tylkowski.entity.Student
 import com.tylkowski.repository.StudentRepository
 import com.tylkowski.service.StudentServiceImpl

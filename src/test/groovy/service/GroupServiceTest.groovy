@@ -1,3 +1,5 @@
+package service
+
 import com.tylkowski.entity.Group
 import com.tylkowski.repository.GroupRepository
 import com.tylkowski.service.GroupServiceImpl
@@ -34,7 +36,7 @@ class GroupServiceTest extends Specification {
         def groupList = new ArrayList<>()
         groupRepository.findAll() >> groupList
         then:
-        groupService.findAll().equals(groupList)
+        groupService.findAll() == groupList
     }
 
 
