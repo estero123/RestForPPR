@@ -20,7 +20,7 @@ export default class App extends Component {
             <div className="App">
                 {/*<Header/>*/}
                 <Router>
-                    <div className="container-fluid">
+                    <div className="container-fluid text-center">
                         <Menu />
                         <Route exact path="/" component={Homepage}/>
                         <Route exact path="/modify-student/:sid" component={ModifyStudentPage}/>

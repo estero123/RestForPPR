@@ -17,7 +17,7 @@ public interface StudentService {
 
     Page<Student> findAll(Pageable pageable);
 
-    Optional<Student> findOne(long studentId);
+    Optional<Student> findById(long studentId);
 
     void deleteById(long studentId);
 

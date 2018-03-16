@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+import static com.tylkowski.utils.Constants.NOT_EXISTS;
+import static com.tylkowski.utils.Constants.OK;
+
 @Service
 public class GroupServiceImpl implements GroupService {
 
@@ -41,7 +44,7 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Optional<Group> findOne(long groupId) {
+    public Optional<Group> findById(long groupId) {
         return groupRepository.findById(groupId);
     }
 
@@ -58,5 +61,16 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public long count() {
         return groupRepository.count();
+    }
+
+    @Override
+    public int update(Group group) {
+        Optional<Group> groupFromDb = groupRepository.findById(group.getGid());
+        if(groupFromDb.isPresent()) {
+            groupRepository.save(group);
+            return OK;
+        }
+        System.out.println("Group with gid" + group.getGid() + " doesn't exists.");
+        return NOT_EXISTS;
     }
 }

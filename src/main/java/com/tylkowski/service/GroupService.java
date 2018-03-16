@@ -1,6 +1,7 @@
 package com.tylkowski.service;
 
 import com.tylkowski.entity.Group;
+import com.tylkowski.entity.Student;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -16,11 +17,13 @@ public interface GroupService {
 
     Page<Group> findAll(Pageable pageable);
 
-    Optional<Group> findOne(long groupId);
+    Optional<Group> findById(long groupId);
 
     void deleteById(long groupId);
 
     void delete(Group group);
+
+    int update(Group student);
 
     long count();
 

@@ -16,10 +16,10 @@ class StudentServiceTest extends Specification {
     }
 
 
-    def "should return student"() {
+    def "should find student"() {
         when:
         studentRepository.findById(_) >> Optional.of(new Student("Test", "Test"))
-        def student = studentService.findOne(1)
+        def student = studentService.findById(1)
         then:
         student.get().getFirstName() == "Test"
         student.get().getLastName() == "Test"
@@ -32,6 +32,14 @@ class StudentServiceTest extends Specification {
         then:
         student.getFirstName() == "Test"
         student.getLastName() == "Test"
+    }
+
+    def "should list all students"() {
+        when:
+        def studentList = new ArrayList<>()
+        studentRepository.findAll() >> studentList
+        then:
+        studentService.findAll() == studentList
     }
 
 

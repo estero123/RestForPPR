@@ -27,7 +27,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student save(Student student) {
-        System.out.println(student.toString());
         return studentRepository.save(student);
     }
 
@@ -47,7 +46,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Optional<Student> findOne(long studentId) {
+    public Optional<Student> findById(long studentId) {
         return studentRepository.findById(studentId);
     }
 

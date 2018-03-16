@@ -48,7 +48,7 @@ public class StudentRestController {
 
     @GetMapping("/{studentId}")
     public ResponseEntity<Optional> showStudent(@PathVariable long studentId) {
-        Optional<Student> student = studentService.findOne(studentId);
+        Optional<Student> student = studentService.findById(studentId);
         System.out.println(student.toString());
         if (student.isPresent()) {
             Link selfLink = linkTo(StudentRestController.class).slash(studentId).withSelfRel();
@@ -63,7 +63,7 @@ public class StudentRestController {
 
     @GetMapping("/{studentId}/groups")
     public ResponseEntity<Iterable<Group>> studentGroups(@PathVariable long studentId) {
-        Optional<Student> student = studentService.findOne(studentId);
+        Optional<Student> student = studentService.findById(studentId);
         if (student.isPresent()) {
             Iterable<Group> studentGroups = student.get().getGroups();
             for (Group group : studentGroups) {
@@ -98,7 +98,7 @@ public class StudentRestController {
 
     @DeleteMapping("/{studentId}/delete/")
     public ResponseEntity<Student> deleteStudent(@PathVariable long studentId) {
-        Optional<Student> student = studentService.findOne(studentId);
+        Optional<Student> student = studentService.findById(studentId);
         if (!student.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {

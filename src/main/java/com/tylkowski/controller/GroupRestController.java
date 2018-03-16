@@ -4,6 +4,7 @@ import com.tylkowski.entity.Group;
 import com.tylkowski.entity.Student;
 import com.tylkowski.service.GroupService;
 import com.tylkowski.service.StudentService;
+import com.tylkowski.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpHeaders;
@@ -47,7 +48,7 @@ public class GroupRestController {
 
     @GetMapping("/{groupId}")
     public ResponseEntity<Optional> showGroup(@PathVariable long groupId) {
-        Optional<Group> group = groupService.findOne(groupId);
+        Optional<Group> group = groupService.findById(groupId);
         if (group.isPresent()) {
             Link selfLink = linkTo(GroupRestController.class).slash(groupId).withSelfRel();
             Link studentsLink = linkTo(methodOn(GroupRestController.class).groupStudents(groupId)).withRel("students");
@@ -61,7 +62,7 @@ public class GroupRestController {
 
     @GetMapping("/{groupId}/students")
     public ResponseEntity<Iterable<Student>> groupStudents(@PathVariable long groupId) {
-        Optional<Group> group = groupService.findOne(groupId);
+        Optional<Group> group = groupService.findById(groupId);
         if (group.isPresent()) {
             List<Student> groupStudents = group.get().getStudents();
             for (Student student : groupStudents) {
@@ -90,7 +91,7 @@ public class GroupRestController {
 
     @DeleteMapping("/{groupId}/delete/")
     public ResponseEntity<Void> deleteGroup(@PathVariable long groupId) {
-        Optional<Group> group = groupService.findOne(groupId);
+        Optional<Group> group = groupService.findById(groupId);
         if (!group.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
@@ -98,24 +99,15 @@ public class GroupRestController {
                 s.getGroups().remove(group.get());
                 studentService.save(s);
             });
-//            List<Student> studentList = group.get().getStudents();
-//            for (Student student : studentList) {
-//                student.getGroups().remove(group.get());
-//            }
-//            studentService.save(studentList);
-//            groupService.save(group.get());
-//            for (Student student : group.get().getStudents()) {
-//                student.getGroups().remove(group.get());
-//
-//            }
-            groupService.delete(group.get());
+            groupService.deleteById(groupId);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
+
     }
 
     @PutMapping(value = {"/", ""})
     public ResponseEntity<Void> updateGroup(@RequestBody Group group) {
-        if (group != null) {
+        if (groupService.update(group) == Constants.OK) {
             groupService.save(group);
             return new ResponseEntity<>(HttpStatus.OK);
         } else {

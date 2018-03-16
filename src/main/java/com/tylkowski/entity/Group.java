@@ -2,13 +2,18 @@ package com.tylkowski.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Groups")
@@ -24,11 +29,7 @@ public class Group extends ResourceSupport {
     @Column(name = "groupName")
     private String groupName;
 
-    //    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(name = "students_groups",
-//            joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "sid"),
-//            inverseJoinColumns = @JoinColumn(name = "groups_id",
-//                    referencedColumnName = "sid"))
+
     @JsonBackReference
     @ManyToMany(mappedBy = "groups", fetch = FetchType.EAGER)
     private List<Student> students;
@@ -69,5 +70,20 @@ public class Group extends ResourceSupport {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Group group = (Group) o;
+        return getGid() == group.getGid();
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), getGid());
     }
 }
